@@ -1,9 +1,10 @@
 # GarfieldXBM
 
-Small bitmap icons (XBM source + BMP preview) used as boot splash screens and
-status icons across this account's ESP8266/Arduino OLED sketches, via
-[ESP8266-Garfield-Common](https://github.com/bobhuang1/ESP8266-Garfield-Common)
-and the [ESP12-GeigerCounter](https://github.com/bobhuang1/ESP12-GeigerCounter-SPI-New12864)
+Small bitmap icons (XBM source + BMP preview) for boot splash screens and
+status icons on ESP8266/Arduino OLED projects, used by
+[ESP8266-Functions-Common](https://github.com/bobhuang1/ESP8266-Functions-Common)'s
+`BootSplashBitmap` library and the
+[ESP12-GeigerCounter](https://github.com/bobhuang1/ESP12-GeigerCounter-SPI-New12864)
 / [ESP12-PianoHumidityControl](https://github.com/bobhuang1/ESP12-PianoHumidityControl-SPI-Mini12864-zh)
 sketches.
 
@@ -29,8 +30,8 @@ display.drawXBM(31, 0, c0c2ac37ec5e4ca883599460dfb0490e_width, c0c2ac37ec5e4ca88
 The auto-generated hex-string array/macro names come from the image
 conversion tool used to produce these files (e.g. an online image-to-XBM
 converter) - rename them to something readable if you'd rather not reference
-them by their generated name, as `ESP8266-Garfield-Common` does (it copies
-the `Garfield.xbm` bit array in under the name `garfield`).
+them by their generated name, as `BootSplashBitmap` does (it copies the
+`Garfield.xbm` bit array in under the name `garfield`).
 
 The `.bmp` files are the source images the `.xbm` files were converted from -
 handy if you want to re-convert at a different size/threshold.
