@@ -35,3 +35,8 @@ them by their generated name, as `BootSplashBitmap` does (it copies the
 
 The `.bmp` files are the source images the `.xbm` files were converted from -
 handy if you want to re-convert at a different size/threshold.
+
+## Copyright note
+
+Garfield is a trademark of and © Paws, Inc. All rights reserved. The bitmap
+conversions in this repo are for personal, non-commercial hobby use only.
