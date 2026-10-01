@@ -40,3 +40,8 @@ handy if you want to re-convert at a different size/threshold.
 
 Garfield is a trademark of and © Paws, Inc. All rights reserved. The bitmap
 conversions in this repo are for personal, non-commercial hobby use only.
+
+
+## License
+
+This project is free software, released under the **GNU General Public License v3.0**. You may redistribute and/or modify it under those terms; see [LICENSE.md](LICENSE.md) for the full text.
