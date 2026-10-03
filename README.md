@@ -17,31 +17,33 @@ sketches.
 
 ## Usage
 
-The `.xbm` files are C source (`u8g2`/Arduino-compatible `static const uint8_t
-name[] = {...}` byte arrays with `_width`/`_height` `#define`s) - include the
-one you need directly in your sketch, or copy the array into your own header,
-then draw it with u8g2's `drawXBM()`:
+Each `.xbm` file is C source: a `static const unsigned char <name>_bits[]
+U8X8_PROGMEM` array plus `<name>_width` / `<name>_height` macros, where
+`<name>` is `garfield`, `mute`, `speaker` or `nuclear`. `U8X8_PROGMEM` keeps
+the bitmap in flash (required on AVR, where u8g2 reads XBM data with
+`pgm_read_byte`, and it saves RAM on ESP8266), so include the file after
+`U8g2lib.h`, then draw it with u8g2's `drawXBM()`:
 
 ```cpp
-#include "Garfield.xbm" // defines a byte array + width/height macros
-display.drawXBM(31, 0, c0c2ac37ec5e4ca883599460dfb0490e_width, c0c2ac37ec5e4ca883599460dfb0490e_height, c0c2ac37ec5e4ca883599460dfb0490e_bits);
+#include <U8g2lib.h>
+#include "Garfield.xbm" // garfield_bits, garfield_width, garfield_height
+display.drawXBM(31, 0, garfield_width, garfield_height, garfield_bits);
 ```
-
-The auto-generated hex-string array/macro names come from the image
-conversion tool used to produce these files (e.g. an online image-to-XBM
-converter) - rename them to something readable if you'd rather not reference
-them by their generated name, as `BootSplashBitmap` does (it copies the
-`Garfield.xbm` bit array in under the name `garfield`).
 
 The `.bmp` files are the source images the `.xbm` files were converted from -
 handy if you want to re-convert at a different size/threshold.
 
 ## Copyright note
 
-Garfield is a trademark of and © Paws, Inc. All rights reserved. The bitmap
-conversions in this repo are for personal, non-commercial hobby use only.
+Garfield is a trademark of and © Paws, Inc. All rights reserved.
+`Garfield.xbm` and `Garfield.bmp` are **not** covered by this repository's GPL
+license: they are a fan-made conversion of a copyrighted character for
+personal, non-commercial hobby use only. Replace them with your own artwork
+for anything you distribute.
 
 
 ## License
 
-This project is free software, released under the **GNU General Public License v3.0**. You may redistribute and/or modify it under those terms; see [LICENSE.md](LICENSE.md) for the full text.
+This project is free software, released under the **GNU General Public License v3.0**, except for the Garfield files described above. You may redistribute and/or modify it under those terms; see [LICENSE.md](LICENSE.md) for the full text.
+
+Contributors: run `git config core.hooksPath .githooks` once to enable the repository's commit-message hook.
